@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nupur Prasmit — AI Product Leader</title>
+<meta name="description" content="Nupur Prasmit is an AI Product Leader at Angel One. Built platforms reaching 1.5M+ daily users and ₹700Cr+ revenue impact. Creator of AccuChats.">
+<meta name="author" content="Nupur Prasmit">
+<meta property="og:title" content="Nupur Prasmit — AI Product Leader">
+<meta property="og:description" content="AI Product Leader. ₹700Cr+ revenue influenced. 1.5M+ daily users. Building AccuChats — AI reliability infrastructure for enterprises.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nupurprasmit.com">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #faf9f7;
+  --surface: #f3f1ee;
+  --border: rgba(0,0,0,0.08);
+  --border-mid: rgba(0,0,0,0.13);
+  --text: #1a1714;
+  --muted: #7a746c;
+  --accent: #9b6f2f;
+  --accent-light: rgba(155,111,47,0.09);
+  --accent-border: rgba(155,111,47,0.28);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+
+.ambient{position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(155,111,47,0.05) 0%,transparent 65%);top:-300px;right:-300px;pointer-events:none;z-index:0}
+.container{max-width:1000px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+
+/* ── NAV ── */
+.nav-wrap{position:sticky;top:0;background:rgba(250,249,247,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.1em;text-decoration:none}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;letter-spacing:0.02em}
+.nav-links a:hover{color:var(--text)}
+
+/* ── HERO ── */
+.hero{padding:90px 0 80px;border-bottom:1px solid var(--border)}
+.hero-inner{display:grid;grid-template-columns:1fr 140px;gap:40px;align-items:start}
+
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--accent)}
+
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(50px,7.5vw,80px);font-weight:700;line-height:1.0;letter-spacing:-2px;margin-bottom:24px}
+.hero-name em{font-style:italic;color:var(--accent)}
+
+.hero-thesis{font-size:17px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:16px;font-weight:300}
+.hero-thesis strong{color:var(--text);font-weight:500}
+
+/* WHAT I DO TAGS */
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.hero-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:4px 12px;border-radius:20px;letter-spacing:0.04em}
+
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* PHOTO */
+.hero-photo-wrap{display:flex;justify-content:flex-end;padding-top:8px}
+.hero-photo{width:130px;height:130px;border-radius:50%;overflow:hidden;border:3px solid #fff;box-shadow:0 4px 20px rgba(0,0,0,0.1);background:var(--surface)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo-placeholder{width:130px;height:130px;border-radius:50%;border:2px dashed var(--accent-border);background:var(--accent-light);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.hero-photo-placeholder span{font-family:'DM Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:0.08em;text-align:center;line-height:1.6}
+
+/* BUTTONS */
+.btn-primary{background:var(--text);color:var(--bg);padding:11px 20px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.2s;white-space:nowrap}
+.btn-primary:hover{background:#2d2926;transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--border-mid);color:var(--muted);padding:11px 20px;border-radius:6px;font-size:13px;text-decoration:none;background:#fff;transition:all 0.2s;white-space:nowrap}
+.btn-ghost:hover{border-color:rgba(0,0,0,0.22);color:var(--text)}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--border)}
+.stat{padding:40px 0;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat:not(:first-child){padding-left:40px}
+.stat-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1;margin-bottom:8px}
+.stat-context{font-size:13px;color:var(--muted);line-height:1.55;font-weight:300}
+.stat-context strong{color:var(--text);display:block;font-size:14px;font-weight:500;margin-bottom:3px}
+
+/* ── SECTION HEADER ── */
+.section-header{display:flex;align-items:baseline;gap:18px;margin-bottom:44px;padding-top:76px}
+.section-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:400}
+.section-num{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:0.12em}
+
+/* ── NOW BUILDING ── */
+.now-card{background:#fff;border:1px solid var(--accent-border);border-radius:14px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.now-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.now-label::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.85)}}
+
+.now-title{font-family:'Playfair Display',serif;font-size:27px;font-weight:700;margin-bottom:8px}
+.now-subtitle{font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:14px;letter-spacing:0.04em}
+.now-desc{font-size:15px;color:var(--muted);font-weight:300;line-height:1.75;margin-bottom:18px}
+
+.now-proof{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-bottom:18px}
+.now-proof-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+.now-proof ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.now-proof ul li{font-size:13px;color:var(--text);font-weight:300;display:flex;align-items:baseline;gap:8px;line-height:1.55}
+.now-proof ul li::before{content:'→';color:var(--accent);font-size:12px;flex-shrink:0}
+
+.now-why-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+.now-why-text{font-size:15px;color:var(--text);font-weight:300;line-height:1.8}
+
+.work-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:500;transition:gap 0.2s}
+.work-link:hover{gap:10px}
+
+/* ── WORK ITEMS ── */
+.work-item{display:grid;grid-template-columns:140px 1fr;gap:0 48px;padding:42px 0;border-top:1px solid var(--border)}
+.work-item:last-child{border-bottom:1px solid var(--border)}
+
+.work-year{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.06em;padding-top:5px;line-height:1.6}
+
+.work-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.work-subtitle{font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:14px;letter-spacing:0.03em}
+
+.work-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);border:1px solid var(--accent-border);background:var(--accent-light);padding:3px 10px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+
+.work-desc{color:var(--muted);font-size:15px;max-width:580px;margin-bottom:14px;font-weight:300;line-height:1.7}
+
+.work-decision{background:#fff;border:1px solid var(--border);border-left:2px solid var(--accent);padding:14px 18px;margin:16px 0;border-radius:0 8px 8px 0}
+.work-decision-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:7px}
+.work-decision p{font-size:14px;color:var(--text);font-weight:300;line-height:1.7}
+
+.work-metrics{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.work-metric{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:4px 11px;border-radius:20px}
+.work-metric span{color:var(--text);font-weight:500}
+
+/* ── WRITING ── */
+.writing-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:10px}
+.writing-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;display:block;transition:all 0.25s}
+.writing-card:hover{border-color:var(--accent-border);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+.writing-card.teaser{border-style:dashed;opacity:0.6;cursor:default}
+.writing-card.teaser:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.writing-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px}
+.writing-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--text);line-height:1.35;margin-bottom:10px}
+.writing-excerpt{font-size:14px;color:var(--muted);line-height:1.65;font-weight:300}
+.writing-arrow{font-size:12px;color:var(--accent);margin-top:12px;display:block;font-weight:500;font-family:'DM Mono',monospace;letter-spacing:0.04em}
+.writing-note{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);opacity:0.5;margin-top:12px;letter-spacing:0.06em}
+
+/* ── BELIEFS ── */
+.beliefs-subhead{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--muted);margin-bottom:22px;margin-top:52px}
+.beliefs-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.belief{background:#fff;border:1px solid var(--border);border-radius:10px;padding:22px 24px;transition:border-color 0.2s}
+.belief:hover{border-color:var(--accent-border)}
+.belief-claim{font-size:14px;font-weight:500;margin-bottom:8px;line-height:1.4}
+.belief-why{font-size:13px;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* ── CONTACT ── */
+.contact-block{padding:76px 0 96px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-heading{font-family:'Playfair Display',serif;font-size:38px;font-weight:400;line-height:1.2;margin-bottom:14px}
+.contact-sub{font-size:15px;color:var(--muted);font-weight:300;max-width:340px;line-height:1.7}
+.contact-links{display:flex;flex-direction:column;gap:10px;padding-top:4px}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;background:#fff;border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:all 0.2s}
+.contact-link:hover{border-color:var(--accent-border);box-shadow:0 4px 14px rgba(0,0,0,0.05);transform:translateY(-1px)}
+.contact-link-label{font-size:14px;color:var(--text);font-weight:500}
+.contact-link-meta{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+
+footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-text{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.05em}
+
+.fade{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade.in{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:760px){
+  .container{padding:0 20px}
+  .hero{padding:60px 0 50px}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-photo-wrap{display:none}
+  .hero-name{font-size:44px;letter-spacing:-1.5px}
+  .stats{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--border);padding:26px 0}
+  .stat:not(:first-child){padding-left:0}
+  .work-item{grid-template-columns:1fr;gap:6px}
+  .writing-grid{grid-template-columns:1fr}
+  .beliefs-list{grid-template-columns:1fr}
+  .now-card{grid-template-columns:1fr;gap:26px;padding:26px}
+  .contact-block{grid-template-columns:1fr;gap:34px}
+}
+</style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<div class="nav-wrap">
+  <div class="container">
+    <nav>
+      <a href="#" class="nav-logo">Nupur Prasmit</a>
+      <ul class="nav-links">
+        <li><a href="#building">Now</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#thinking">Thinking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero fade">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">AI Product Leader · Angel One · Bengaluru</div>
+        <h1 class="hero-name">Nupur<br><em>Prasmit</em></h1>
+        <p class="hero-thesis">
+          I build AI-powered products and growth systems that
+          <strong>work at scale in production</strong> — from ML personalization engines
+          serving millions of users to financial content platforms that grow purely on search.
+        </p>
+        <div class="hero-tags">
+          <span class="hero-tag">AI / ML Products</span>
+          <span class="hero-tag">Growth Systems</span>
+          <span class="hero-tag">LLM Infrastructure</span>
+          <span class="hero-tag">Fintech</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#work">See what I've built</a>
+          <a class="btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <!-- Replace with your actual photo -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-placeholder">
+          <span>Your<br>photo<br>here</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats fade">
+    <div class="stat">
+      <div class="stat-num">₹700Cr+</div>
+      <div class="stat-context">
+        <strong>Revenue Influenced</strong>
+        Across personalization, monetization &amp; growth platforms at Angel One
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1.5M+</div>
+      <div class="stat-context">
+        <strong>Daily Users Reached</strong>
+        Via AI-personalized newsletter &amp; engagement systems
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">20M+</div>
+      <div class="stat-context">
+        <strong>Platform Users</strong>
+        Total footprint across growth &amp; monetization products built
+      </div>
+    </div>
+  </div>
+
+  <!-- NOW BUILDING -->
+  <section id="building">
+    <div class="section-header fade">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Now Building</h2>
+    </div>
+    <div class="now-card fade">
+      <div>
+        <div class="now-label">Active — 2026</div>
+        <div class="now-title">AccuChats</div>
+        <div class="now-subtitle">AI reliability platform for enterprise LLM deployments</div>
+        <p class="now-desc">
+          Enterprises are deploying LLM-powered assistants on their own data — internal docs, product knowledge bases, support systems. The problem they all hit: the AI gives confident, wrong answers. AccuChats is the evaluation and reliability layer that fixes this before it reaches users.
+        </p>
+        <div class="now-proof">
+          <div class="now-proof-label">Built and measured so far</div>
+          <ul>
+            <li>Evaluated 50+ prompt templates across 4 embedding models</li>
+            <li>Improved grounded answer accuracy from 72% → 96% using hybrid retrieval + reranking</li>
+            <li>Built eval framework across 400+ benchmark queries — measuring hallucination risk, retrieval precision, and response consistency</li>
+            <li>Shipped entire platform in 30 days, ~85% AI-assisted via Cursor.ai</li>
+          </ul>
+        </div>
+        <a class="work-link" href="https://accuchats.com" target="_blank" rel="noopener">accuchats.com ↗</a>
+      </div>
+      <div>
+        <div class="now-why-label">The problem I am solving</div>
+        <p class="now-why-text">
+          Most LLM deployment failures are not model failures. They are retrieval failures — the AI never received the right context to answer correctly in the first place.<br><br>
+          The 72% → 96% accuracy jump in AccuChats came entirely from fixing the retrieval layer: tuning retrieval count, adding metadata filters, and expanding queries before the LLM ran. The model never changed.<br><br>
+          Enterprises spending months on prompt engineering are solving the wrong problem. AccuChats surfaces the right one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="section-header fade">
+      <span class="section-num">02</span>
+      <h2 class="section-title">What I've Built</h2>
+    </div>
+
+    <!-- Market Charcha -->
+    <div class="work-item fade">
+      <div class="work-year">2025 —<br>Present</div>
+      <div>
+        <div class="work-title">Market Charcha <span class="work-tag">Live</span></div>
+        <div class="work-subtitle">Structured financial content platform for retail traders · Angel One</div>
+        <p class="work-desc">
+          A web platform that organises market news, stock analysis, and earnings data into structured, searchable content — helping retail traders quickly find context for stocks they are tracking. Built to be SEO-native and AI-indexable from day one.
+        </p>
+        <div class="work-decision">
+          <div class="work-decision-label">The decision that mattered</div>
+          <p>Most fintech content is published and forgotten. I architected this with Schema.org markup, strict CMS taxonomy, canonicalization, and an internal linking graph so every piece of content was discoverable by both search engines and AI summarization tools. A 3-person team, 30 days, 85% of the codebase written with Cursor.ai. Growth came entirely from organic search — zero marketing spend.</p>
+        </div>
+        <div class="work-metrics">
+          <div class="work-metric"><span>100K</span> MAU</div>
+          <div class="work-metric"><span>50K</span> monthly organic visits</div>
+          <div class="work-metric"><span>~1%</span> traffic → app install</div>
+          <div class="work-metric"><span>₹10Cr+</span> projected annual revenue</div>
+          <div class="work-metric"><span>#1</span> ranking for key queries</div>
+        </div>
+        <a class="work-link" href="https://marketcharcha.angelone.in" target="_blank" rel="noopener" style="margin-top:16px">Visit platform ↗</a>
+      </div>
+    </div>
+
+    <!-- Newsletter Platform -->
+    <div class="work-item fade">
+      <div class="work-year">2024</div>
+      <div>
+        <div class="work-title">AI-Personalised Newsletter Platform</div>
+        <div class="work-subtitle">1.5M+ daily users · Angel One</div>
+        <p class="work-desc">
+          Built an AI-driven newsletter system that delivered personalised daily market content to 1.5M+ users. The personalisation engine selected content topics, timing, and format based on each user's trading behaviour and feature usage — not a single template for all.
+        </p>
+        <div class="work-decision">
+          <div class="work-decision-label">The decision that mattered</div>
+          <p>Early versions sent the same content to all users with mild segmentation. Engagement was flat. I rebuilt the content selection layer to predict which market topics each user actually cared about based on their holdings and past interactions. Open rates and downstream app engagement both moved — proving that personalisation only works when the signal is right, not just when the timing is optimised.</p>
+        </div>
+        <div class="work-metrics">
+          <div class="work-metric"><span>1.5M+</span> daily reach</div>
+          <div class="work-metric"><span>₹65Cr+</span> incremental revenue</div>
+          <div class="work-metric"><span>+3%</span> MAU lift</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfect Ping -->
+    <div class="work-item fade">
+      <div class="work-year">2024</div>
+      <div>
+        <div class="work-title">Perfect Ping — ML Push Targeting</div>
+        <div class="work-subtitle">XGBoost targeting system · Angel One</div>
+        <p class="work-desc">
+          Built an ML targeting system that decided who to send push notifications to, what to send, and when — replacing manual segmentation with a model that predicted each user's next most likely action.
+        </p>
+        <div class="work-decision">
+          <div class="work-decision-label">The decision that mattered</div>
+          <p>The platform had severe notification fatigue. Instead of A/B testing send times, I built an XGBoost model predicting which feature a user was most likely to activate next and only notified when there was something genuinely relevant for that user. Push CTR nearly tripled because we stopped treating 1.5M users as one cohort.</p>
+        </div>
+        <div class="work-metrics">
+          <div class="work-metric"><span>0.7% → 2%</span> push CTR</div>
+          <div class="work-metric"><span>+5%</span> DAU traffic</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Growth & Monetisation -->
+    <div class="work-item fade">
+      <div class="work-year">2022 —<br>2023</div>
+      <div>
+        <div class="work-title">Growth &amp; Monetisation Platforms</div>
+        <div class="work-subtitle">Offers, Rewards, Referral, Subscriptions · Angel One</div>
+        <p class="work-desc">
+          Led product development of Offers &amp; Rewards, Referral, and Subscription platforms. Also introduced Daily Streaks — a gamification mechanic designed to increase login habit formation across the user base.
+        </p>
+        <div class="work-decision">
+          <div class="work-decision-label">The decision that mattered</div>
+          <p>Daily Streaks was internally questioned — it was a habit mechanic with no direct revenue line. I argued that login frequency was a leading indicator of long-term retention and pushed for it. Login frequency went up 40% and contributed +1% DAU. The soft engagement lever turned out to be the real one.</p>
+        </div>
+        <div class="work-metrics">
+          <div class="work-metric"><span>₹500Cr+</span> revenue</div>
+          <div class="work-metric"><span>2M+</span> users</div>
+          <div class="work-metric"><span>2.3x ROI</span> on ₹100Cr campaigns</div>
+          <div class="work-metric"><span>+40%</span> login frequency</div>
+          <div class="work-metric"><span>+20%</span> app engagement</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- THINKING -->
+  <section id="thinking">
+    <div class="section-header fade">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Thinking</h2>
+    </div>
+
+    <div class="writing-grid fade">
+      <a class="writing-card" href="https://www.linkedin.com/pulse/we-just-launched-market-charcha-platform-built-3-member-nupur-prasmit-iekuc/" target="_blank" rel="noopener">
+        <div class="writing-tag">Launch Story</div>
+        <div class="writing-title">We Just Launched Market Charcha — Here's How</div>
+        <p class="writing-excerpt">3 people, 30 days, 85% AI-assisted code. The decisions, the architecture, and what we learned building and shipping a content platform from zero.</p>
+        <span class="writing-arrow">Read on LinkedIn ↗</span>
+      </a>
+
+      <a class="writing-card" href="https://www.linkedin.com/pulse/product-manager-lens-using-llms-rag-101-nupur-prasmit-g1fvc/" target="_blank" rel="noopener">
+        <div class="writing-tag">AI Systems</div>
+        <div class="writing-title">A PM's Lens on LLMs and RAG</div>
+        <p class="writing-excerpt">Retrieval count, metadata filters, pre-emptive question expansion — the levers that actually determine whether your RAG system works in production, and why most teams tune the wrong things.</p>
+        <span class="writing-arrow">Read on LinkedIn ↗</span>
+      </a>
+
+      <a class="writing-card" href="https://www.linkedin.com/pulse/why-accuracy-can-deceptive-product-managers-guide-recall-prasmit-quxhc/" target="_blank" rel="noopener">
+        <div class="writing-tag">AI Metrics</div>
+        <div class="writing-title">Why Accuracy is Deceptive: A PM's Guide to Recall</div>
+        <p class="writing-excerpt">Accuracy looks great on dashboards and lies in production. What to actually track when evaluating ML systems — and why precision and recall matter more than the headline number.</p>
+        <span class="writing-arrow">Read on LinkedIn ↗</span>
+      </a>
+
+      <a class="writing-card" href="https://www.linkedin.com/pulse/cross-validation-crucial-step-towards-robust-machine-learning-nupur-pzaec/" target="_blank" rel="noopener">
+        <div class="writing-tag">ML Robustness</div>
+        <div class="writing-title">Cross-Validation: The Step Most Teams Skip</div>
+        <p class="writing-excerpt">Why skipping cross-validation is the most common way teams ship models that test well and quietly fail in production — and what robust evaluation actually looks like.</p>
+        <span class="writing-arrow">Read on LinkedIn ↗</span>
+      </a>
+
+      <a class="writing-card" href="https://www.linkedin.com/pulse/can-one-input-alone-power-recommendations-engine-neural-nupur-prasmit-qcujc/" target="_blank" rel="noopener">
+        <div class="writing-tag">Recommendation Systems</div>
+        <div class="writing-title">Can One Input Alone Power a Recommendations Engine?</div>
+        <p class="writing-excerpt">Neural collaborative filtering, single-signal limitations, and why recommendation systems that rely on one input eventually plateau — and what the second signal should be.</p>
+        <span class="writing-arrow">Read on LinkedIn ↗</span>
+      </a>
+
+      <div class="writing-card teaser">
+        <div class="writing-tag">In Progress</div>
+        <div class="writing-title">Why Most AI Products Fail in Production</div>
+        <p class="writing-excerpt">The demo works. The prototype impresses. Then it hits real users. The failure is never the model — it's everything the model depends on that nobody built.</p>
+        <div class="writing-note">Coming soon</div>
+      </div>
+    </div>
+
+    <!-- Beliefs -->
+    <h3 class="beliefs-subhead">Things I actually believe</h3>
+    <ul class="beliefs-list fade">
+      <li class="belief">
+        <div class="belief-claim">The retrieval layer matters more than the model.</div>
+        <div class="belief-why">GPT-4 with bad retrieval underperforms GPT-3.5 with excellent grounding. Most AI failures in production are retrieval failures nobody diagnosed correctly.</div>
+      </li>
+      <li class="belief">
+        <div class="belief-claim">Chat is not the end state for AI products.</div>
+        <div class="belief-why">We are in the everything-is-a-chat-interface phase. Structured decision systems will replace most of what we currently call AI products within 5 years.</div>
+      </li>
+      <li class="belief">
+        <div class="belief-claim">AI reliability will become a compliance requirement.</div>
+        <div class="belief-why">The moment AI touches a regulated workflow, hallucination probability becomes a legal question. Most enterprises are not ready for this conversation.</div>
+      </li>
+      <li class="belief">
+        <div class="belief-claim">Most ML personalisation optimises for the wrong signal.</div>
+        <div class="belief-why">Models trained on clicks optimise for clicks. Without measuring what happened after the click, you build a system that gets better at the wrong thing.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-block fade">
+      <div>
+        <h2 class="contact-heading">Let's talk<br><em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--accent)">seriously.</em></h2>
+        <p class="contact-sub">
+          Hiring for AI product roles? Building something in LLM reliability or growth infrastructure? I am interested in hard problems worth solving.
+        </p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="/cdn-cgi/l/email-protection#caa4bfbabfb8e4bab8abb9fbfb8aada7aba3a6e4a9a5a7">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-meta"><span class="__cf_email__" data-cfemail="e38d96939691cd93918290d2d2a3848e828a8fcd808c8e">[email&#160;protected]</span></span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/nupur-prasmit" target="_blank" rel="noopener">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-meta">nupur-prasmit ↗</span>
+        </a>
+        <a class="contact-link" href="https://accuchats.com" target="_blank" rel="noopener">
+          <span class="contact-link-label">AccuChats</span>
+          <span class="contact-link-meta">accuchats.com ↗</span>
+        </a>
+        <a class="contact-link" href="https://marketcharcha.angelone.in" target="_blank" rel="noopener">
+          <span class="contact-link-label">Market Charcha</span>
+          <span class="contact-link-meta">marketcharcha.angelone.in ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fade">
+    <span class="footer-text">© 2026 Nupur Prasmit</span>
+    <span class="footer-text">IIM Kozhikode · BIT Sindri · CEO Club Award 2024–25</span>
+  
+  </footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.fade').forEach(function(el){
+  el.classList.add('in');
+});
+</script>
+</body>
+</html>
