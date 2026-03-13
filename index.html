@@ -9,7 +9,7 @@
 <meta property="og:title" content="Nupur Prasmit — AI Product Leader">
 <meta property="og:description" content="AI Product Leader. ₹700Cr+ revenue influenced. 1.5M+ daily users. Building AccuChats — AI reliability infrastructure for enterprises.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://nupurprasmit.com">
+<meta property="og:url" content="https://nup2692.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -475,13 +475,17 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
         </p>
       </div>
       <div class="contact-links">
-        <a class="contact-link" href="/cdn-cgi/l/email-protection#caa4bfbabfb8e4bab8abb9fbfb8aada7aba3a6e4a9a5a7">
+        <a class="contact-link" href="mailto:nupur.pras11@gmail.com">
           <span class="contact-link-label">Email</span>
-          <span class="contact-link-meta"><span class="__cf_email__" data-cfemail="e38d96939691cd93918290d2d2a3848e828a8fcd808c8e">[email&#160;protected]</span></span>
+          <span class="contact-link-meta">nupur.pras11@gmail.com</span>
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/nupur-prasmit" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://www.linkedin.com/in/npra/" target="_blank" rel="noopener">
           <span class="contact-link-label">LinkedIn</span>
-          <span class="contact-link-meta">nupur-prasmit ↗</span>
+          <span class="contact-link-meta">npra ↗</span>
+        </a>
+        <a class="contact-link" href="https://nup2692.github.io/" target="_blank" rel="noopener">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-meta">nup2692.github.io ↗</span>
         </a>
         <a class="contact-link" href="https://accuchats.com" target="_blank" rel="noopener">
           <span class="contact-link-label">AccuChats</span>
@@ -504,8 +508,17 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
 </div>
 
 <script>
-document.querySelectorAll('.fade').forEach(function(el){
-  el.classList.add('in');
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade').forEach(function(el) {
+  observer.observe(el);
 });
 </script>
 </body>
