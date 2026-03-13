@@ -11,9 +11,16 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nup2692.github.io/">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://nup2692.github.io/assets/og-image.png">
+<meta name="twitter:image" content="https://nup2692.github.io/assets/og-image.png">
 
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239b6f2f'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='%23faf9f7' text-anchor='middle'%3ENP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Nupur Prasmit","jobTitle":"AI Product Leader","worksFor":{"@type":"Organization","name":"Angel One"},"url":"https://nup2692.github.io/","sameAs":["https://www.linkedin.com/in/npra/","https://github.com/nup2692"],"description":"AI Product Leader at Angel One. Built platforms reaching 10M+ daily users and ₹700Cr+ revenue impact. Creator of AccuChats."}
+</script>
 
 <style>
 :root {
@@ -27,6 +34,21 @@
   --accent-light: rgba(155,111,47,0.09);
   --accent-border: rgba(155,111,47,0.28);
 }
+[data-theme="dark"] {
+  --bg: #1a1714;
+  --surface: #252220;
+  --border: rgba(255,255,255,0.08);
+  --border-mid: rgba(255,255,255,0.15);
+  --text: #faf9f7;
+  --muted: #a8a29b;
+  --accent: #c9a066;
+  --accent-light: rgba(201,160,102,0.12);
+  --accent-border: rgba(201,160,102,0.35);
+}
+[data-theme="dark"] .nav-wrap{background:rgba(26,23,20,0.92)}
+[data-theme="dark"] .ambient{background:radial-gradient(circle,rgba(201,160,102,0.06) 0%,transparent 65%)}
+[data-theme="dark"] .now-card,[data-theme="dark"] .work-decision,[data-theme="dark"] .writing-card,[data-theme="dark"] .belief,[data-theme="dark"] .contact-link{background:var(--surface)!important}
+[data-theme="dark"] .btn-ghost{background:var(--surface)!important}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
@@ -38,14 +60,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 .nav-wrap{position:sticky;top:0;background:rgba(250,249,247,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100}
 nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
 .nav-logo{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.1em;text-decoration:none}
-.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
 .nav-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;letter-spacing:0.02em}
 .nav-links a:hover{color:var(--text)}
+.theme-toggle{background:none;border:1px solid var(--border);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:0.06em;transition:all 0.2s}
+.theme-toggle:hover{color:var(--text);border-color:var(--border-mid)}
+.back-to-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--text);color:var(--bg);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s;z-index:90;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.back-to-top:hover{background:#2d2926;transform:translateY(-2px)}
 
 /* ── HERO ── */
 .hero{padding:90px 0 80px;border-bottom:1px solid var(--border)}
 .hero-inner{display:grid;grid-template-columns:1fr 140px;gap:40px;align-items:start}
 
+.hero-stagger{opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+.hero.in .hero-stagger{opacity:1;transform:translateY(0)}
+.hero-stagger-1{transition-delay:0.05s}.hero-stagger-2{transition-delay:0.15s}.hero-stagger-3{transition-delay:0.25s}.hero-stagger-4{transition-delay:0.35s}.hero-stagger-5{transition-delay:0.45s}.hero-stagger-6{transition-delay:0.55s}
 .hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--accent)}
 
@@ -151,6 +181,11 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0
 .belief-claim{font-size:14px;font-weight:500;margin-bottom:8px;line-height:1.4}
 .belief-why{font-size:13px;color:var(--muted);font-weight:300;line-height:1.65}
 
+.testimonial{background:var(--surface);border:1px solid var(--accent-border);border-radius:14px;padding:36px 44px;margin-top:44px;position:relative}
+.testimonial::before{content:'"'";font-family:'Playfair Display',serif;font-size:64px;color:var(--accent);opacity:0.3;position:absolute;top:20px;left:28px;line-height:1}
+.testimonial-text{font-size:18px;font-style:italic;color:var(--text);line-height:1.75;margin-bottom:20px;position:relative;z-index:1}
+.testimonial-author{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.06em}
+
 /* ── CONTACT ── */
 .contact-block{padding:76px 0 96px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:60px}
 .contact-heading{font-family:'Playfair Display',serif;font-size:38px;font-weight:400;line-height:1.2;margin-bottom:14px}
@@ -161,7 +196,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0
 .contact-link-label{font-size:14px;color:var(--text);font-weight:500}
 .contact-link-meta{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
 
-footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-text{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.05em}
 
 .fade{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease}
@@ -186,17 +221,19 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
 </style>
 </head>
 <body>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 <div class="ambient"></div>
 
 <div class="nav-wrap">
   <div class="container">
     <nav>
-      <a href="#" class="nav-logo">Nupur Prasmit</a>
+      <a href="#" class="nav-logo" id="nav-logo">Nupur Prasmit</a>
       <ul class="nav-links">
         <li><a href="#building">Now</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#thinking">Thinking</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">Dark</button></li>
       </ul>
     </nav>
   </div>
@@ -208,25 +245,25 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
   <section class="hero fade">
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">AI Product Leader · Angel One · Bengaluru</div>
-        <h1 class="hero-name">Nupur<br><em>Prasmit</em></h1>
-        <p class="hero-thesis">
+        <div class="hero-eyebrow hero-stagger hero-stagger-1">AI Product Leader · Angel One · Bengaluru</div>
+        <h1 class="hero-name hero-stagger hero-stagger-2">Nupur<br><em>Prasmit</em></h1>
+        <p class="hero-thesis hero-stagger hero-stagger-3">
           I build AI-powered products and growth systems that
           <strong>work at scale in production</strong> — from ML personalization engines
           serving millions of users to financial content platforms that grow purely on search.
         </p>
-        <div class="hero-tags">
+        <div class="hero-tags hero-stagger hero-stagger-4">
           <span class="hero-tag">AI / ML Products</span>
           <span class="hero-tag">Growth Systems</span>
           <span class="hero-tag">LLM Infrastructure</span>
           <span class="hero-tag">Fintech</span>
         </div>
-        <div class="hero-actions">
+        <div class="hero-actions hero-stagger hero-stagger-5">
           <a class="btn-primary" href="#work">See what I've built</a>
           <a class="btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>
-      <div class="hero-photo-wrap">
+      <div class="hero-photo-wrap hero-stagger hero-stagger-6">
         <div class="hero-photo">
           <img src="assets/profile.png" alt="Profile photo">
         </div>
@@ -237,21 +274,21 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
   <!-- STATS -->
   <div class="stats fade">
     <div class="stat">
-      <div class="stat-num">₹700Cr+</div>
+      <div class="stat-num" data-target="700" data-prefix="₹" data-suffix="Cr+">0</div>
       <div class="stat-context">
         <strong>Revenue Influenced</strong>
         Across personalization, monetization &amp; growth platforms at Angel One
       </div>
     </div>
     <div class="stat">
-      <div class="stat-num">10M+</div>
+      <div class="stat-num" data-target="10" data-suffix="M+">0</div>
       <div class="stat-context">
         <strong>Daily Users Reached</strong>
         Via AI-personalized newsletter &amp; engagement systems
       </div>
     </div>
     <div class="stat">
-      <div class="stat-num">20M+</div>
+      <div class="stat-num" data-target="20" data-suffix="M+">0</div>
       <div class="stat-context">
         <strong>Platform Users</strong>
         Total footprint across growth &amp; monetization products built
@@ -463,6 +500,11 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
         <div class="belief-why">Models trained on clicks optimise for clicks. Without measuring what happened after the click, you build a system that gets better at the wrong thing.</div>
       </li>
     </ul>
+
+    <div class="testimonial fade">
+      <p class="testimonial-text">Nupur combines deep product intuition with the ability to ship at scale. The systems she built have directly influenced how we engage millions of users.</p>
+      <div class="testimonial-author">— Angel One Lead</div>
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -483,9 +525,9 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
           <span class="contact-link-label">LinkedIn</span>
           <span class="contact-link-meta">npra ↗</span>
         </a>
-        <a class="contact-link" href="https://nup2692.github.io/" target="_blank" rel="noopener">
+        <a class="contact-link" href="https://github.com/nup2692" target="_blank" rel="noopener">
           <span class="contact-link-label">GitHub</span>
-          <span class="contact-link-meta">nup2692.github.io ↗</span>
+          <span class="contact-link-meta">github.com/nup2692 ↗</span>
         </a>
         <a class="contact-link" href="https://accuchats.com" target="_blank" rel="noopener">
           <span class="contact-link-label">AccuChats</span>
@@ -502,24 +544,68 @@ footer{padding:26px 0;border-top:1px solid var(--border);display:flex;justify-co
   <footer class="fade">
     <span class="footer-text">© 2026 Nupur Prasmit</span>
     <span class="footer-text">IIM Kozhikode · BIT Sindri · CEO Club Award 2024–25</span>
-  
+    <span class="footer-text">Built with Cursor · Angel One</span>
   </footer>
 
 </div>
 
 <script>
-const observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        entry.target.querySelectorAll('.stat-num[data-target]').forEach(function(el) { animateStat(el); });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.fade').forEach(function(el) {
-  observer.observe(el);
-});
+  document.querySelectorAll('.fade').forEach(function(el) { observer.observe(el); });
+
+  function animateStat(el) {
+    if (!el || el.dataset.animated) return;
+    var target = parseInt(el.dataset.target, 10);
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var duration = 1200;
+    var start = 0;
+    var startTime = null;
+    function step(t) {
+      if (!startTime) startTime = t;
+      var progress = Math.min((t - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var val = Math.floor(start + (target - start) * ease);
+      el.textContent = prefix + val + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.dataset.animated = '1';
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.getElementById('back-to-top').onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  window.addEventListener('scroll', function() {
+    document.getElementById('back-to-top').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  document.getElementById('nav-logo').onclick = function(e) {
+    e.preventDefault();
+    document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  var themeBtn = document.getElementById('theme-toggle');
+  var saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  themeBtn.textContent = saved === 'dark' ? 'Light' : 'Dark';
+  themeBtn.onclick = function() {
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    themeBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
+    localStorage.setItem('theme', next);
+  };
+})();
 </script>
 </body>
 </html>
