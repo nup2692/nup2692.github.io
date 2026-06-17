@@ -208,18 +208,105 @@ footer{padding:28px 0;border-top:1px solid var(--border);display:flex;justify-co
 /* ── RESPONSIVE ── */
 @media(max-width:760px){
   .container{padding:0 20px}
-  .hero{padding:60px 0 50px}
-  .hero-inner{grid-template-columns:1fr}
+  
+  /* Navigation */
+  nav{padding:20px 0;flex-wrap:wrap;gap:16px}
+  .nav-logo{font-size:11px}
+  .nav-links{gap:20px;flex-wrap:wrap;row-gap:12px}
+  .nav-links a{font-size:12px}
+  .theme-toggle{font-size:10px;padding:5px 9px}
+  
+  /* Hero */
+  .hero{padding:50px 0 40px}
+  .hero-inner{grid-template-columns:1fr;gap:0}
   .hero-photo-wrap{display:none}
-  .hero-name{font-size:44px;letter-spacing:-1.5px}
-  .stats{grid-template-columns:1fr}
-  .stat{border-right:none;border-bottom:1px solid var(--border);padding:26px 0}
+  .hero-eyebrow{font-size:10px;margin-bottom:18px}
+  .hero-name{font-size:40px;letter-spacing:-1.5px;margin-bottom:20px;line-height:1.1}
+  .hero-thesis{font-size:16px;line-height:1.7;margin-bottom:14px}
+  .hero-tags{gap:6px;margin-bottom:28px}
+  .hero-tag{font-size:10px;padding:3px 10px}
+  .hero-actions{gap:8px}
+  
+  /* Buttons - Better touch targets */
+  .btn-primary,.btn-ghost{padding:13px 22px;font-size:14px;width:100%;text-align:center;display:block}
+  
+  /* Stats */
+  .stats{grid-template-columns:1fr;gap:0}
+  .stat{border-right:none;border-bottom:1px solid var(--border);padding:32px 0}
+  .stat:last-child{border-bottom:none}
   .stat:not(:first-child){padding-left:0}
-  .work-item{grid-template-columns:1fr;gap:6px}
-  .writing-grid{grid-template-columns:1fr}
-  .beliefs-list{grid-template-columns:1fr}
-  .now-card{grid-template-columns:1fr;gap:26px;padding:26px}
-  .contact-block{grid-template-columns:1fr;gap:34px}
+  .stat-num{font-size:34px}
+  .stat-context{font-size:14px}
+  .stat-context strong{font-size:15px}
+  
+  /* Section Headers */
+  .section-header{gap:14px;margin-bottom:32px;padding-top:56px}
+  .section-title{font-size:26px}
+  .section-num{font-size:10px}
+  
+  /* Now Card */
+  .now-card{grid-template-columns:1fr;gap:28px;padding:28px 22px}
+  .now-label{font-size:10px;margin-bottom:12px}
+  .now-title{font-size:24px}
+  .now-subtitle{font-size:12px;margin-bottom:12px}
+  .now-desc{font-size:14px;line-height:1.7;margin-bottom:16px}
+  .now-proof{padding:14px 16px;margin-bottom:16px}
+  .now-proof-label{font-size:9px}
+  .now-proof ul li{font-size:12px;gap:6px}
+  .now-why-label{font-size:9px;margin-bottom:10px}
+  .now-why-text{font-size:14px;line-height:1.75}
+  .work-link{font-size:12px}
+  
+  /* Work Items */
+  .work-item{grid-template-columns:1fr;gap:8px;padding:34px 0}
+  .work-year{font-size:11px;padding-top:0;margin-bottom:4px;color:var(--accent)}
+  .work-title{font-size:20px;margin-bottom:6px}
+  .work-subtitle{font-size:12px;margin-bottom:12px}
+  .work-tag{font-size:9px;padding:3px 9px}
+  .work-desc{font-size:14px;margin-bottom:12px}
+  .work-decision{padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
+  .work-decision-label{font-size:9px;margin-bottom:6px}
+  .work-decision p{font-size:13px;line-height:1.65}
+  .work-metrics{gap:6px;margin-top:14px}
+  .work-metric{font-size:11px;padding:3px 10px}
+  
+  /* Writing */
+  .writing-grid{grid-template-columns:1fr;gap:14px;padding-bottom:10px}
+  .writing-card{padding:20px}
+  .writing-tag{font-size:9px;margin-bottom:9px}
+  .writing-title{font-size:16px;margin-bottom:9px}
+  .writing-excerpt{font-size:13px;line-height:1.6}
+  .writing-arrow{font-size:11px;margin-top:10px}
+  .writing-note{font-size:10px;margin-top:10px}
+  
+  /* Beliefs */
+  .beliefs-subhead{font-size:20px;margin-bottom:20px;margin-top:44px}
+  .beliefs-list{grid-template-columns:1fr;gap:12px}
+  .belief{padding:20px}
+  .belief-claim{font-size:13px;margin-bottom:7px}
+  .belief-why{font-size:12px;line-height:1.6}
+  
+  /* Testimonial */
+  .testimonial{padding:28px 24px;margin-top:36px;border-radius:12px}
+  .testimonial::before{font-size:56px;top:16px;left:20px}
+  .testimonial-text{font-size:16px;line-height:1.7;margin-bottom:16px;padding-left:10px}
+  .testimonial-author{font-size:11px;padding-left:10px}
+  
+  /* Contact */
+  .contact-block{grid-template-columns:1fr;gap:32px;padding:56px 0 72px}
+  .contact-heading{font-size:32px;margin-bottom:12px}
+  .contact-sub{font-size:14px;line-height:1.65;max-width:100%}
+  .contact-links{gap:10px}
+  .contact-link{padding:16px 18px}
+  .contact-link-label{font-size:14px}
+  .contact-link-meta{font-size:11px}
+  
+  /* Footer */
+  footer{padding:24px 0;flex-direction:column;align-items:flex-start;gap:10px}
+  .footer-text{font-size:11px;line-height:1.5}
+  
+  /* Back to top button */
+  .back-to-top{bottom:20px;right:20px;width:48px;height:48px;font-size:20px}
 }
 </style>
 </head>
