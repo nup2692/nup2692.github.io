@@ -206,107 +206,124 @@ footer{padding:28px 0;border-top:1px solid var(--border);display:flex;justify-co
 .fade.in{opacity:1;transform:translateY(0)}
 
 /* ── RESPONSIVE ── */
-@media(max-width:760px){
-  .container{padding:0 20px}
+
+/* Tablet */
+@media screen and (max-width:900px){
+  .container{padding:0 30px}
+  .hero-inner{gap:30px}
+  .now-card{gap:36px;padding:36px}
+  .contact-block{gap:50px}
+}
+
+/* Mobile */
+@media screen and (max-width:768px){
+  .container{padding:0 20px !important}
   
   /* Navigation */
-  nav{padding:20px 0;flex-wrap:wrap;gap:16px}
-  .nav-logo{font-size:11px}
-  .nav-links{gap:20px;flex-wrap:wrap;row-gap:12px}
-  .nav-links a{font-size:12px}
-  .theme-toggle{font-size:10px;padding:5px 9px}
+  nav{padding:16px 0 !important;flex-wrap:wrap !important;gap:12px !important}
+  .nav-logo{font-size:11px !important}
+  .nav-links{gap:16px !important;flex-wrap:wrap !important}
+  .nav-links a{font-size:12px !important}
+  .theme-toggle{font-size:10px !important;padding:5px 8px !important}
   
   /* Hero */
-  .hero{padding:50px 0 40px}
-  .hero-inner{grid-template-columns:1fr;gap:0}
-  .hero-photo-wrap{display:none}
-  .hero-eyebrow{font-size:10px;margin-bottom:18px}
-  .hero-name{font-size:40px;letter-spacing:-1.5px;margin-bottom:20px;line-height:1.1}
-  .hero-thesis{font-size:16px;line-height:1.7;margin-bottom:14px}
-  .hero-tags{gap:6px;margin-bottom:28px}
-  .hero-tag{font-size:10px;padding:3px 10px}
-  .hero-actions{gap:8px}
+  .hero{padding:40px 0 36px !important}
+  .hero-inner{display:block !important}
+  .hero-photo-wrap{display:none !important}
+  .hero-eyebrow{font-size:10px !important;margin-bottom:16px !important}
+  .hero-name{font-size:36px !important;letter-spacing:-1px !important;margin-bottom:18px !important;line-height:1.05 !important}
+  .hero-thesis{font-size:15px !important;line-height:1.65 !important;margin-bottom:12px !important;max-width:100% !important}
+  .hero-tags{gap:6px !important;margin-bottom:24px !important}
+  .hero-tag{font-size:10px !important;padding:4px 10px !important}
+  .hero-actions{flex-direction:column !important;gap:10px !important}
   
-  /* Buttons - Better touch targets */
-  .btn-primary,.btn-ghost{padding:13px 22px;font-size:14px;width:100%;text-align:center;display:block}
+  /* Buttons */
+  .btn-primary,.btn-ghost{padding:14px 24px !important;font-size:14px !important;width:100% !important;text-align:center !important;display:block !important}
   
   /* Stats */
-  .stats{grid-template-columns:1fr;gap:0}
-  .stat{border-right:none;border-bottom:1px solid var(--border);padding:32px 0}
-  .stat:last-child{border-bottom:none}
-  .stat:not(:first-child){padding-left:0}
-  .stat-num{font-size:34px}
-  .stat-context{font-size:14px}
-  .stat-context strong{font-size:15px}
+  .stats{display:block !important}
+  .stat{border-right:none !important;border-bottom:1px solid var(--border) !important;padding:28px 0 !important}
+  .stat:last-child{border-bottom:none !important}
+  .stat:not(:first-child){padding-left:0 !important}
+  .stat-num{font-size:32px !important}
+  .stat-context{font-size:13px !important}
+  .stat-context strong{font-size:14px !important}
   
   /* Section Headers */
-  .section-header{gap:14px;margin-bottom:32px;padding-top:56px}
-  .section-title{font-size:26px}
-  .section-num{font-size:10px}
+  .section-header{gap:12px !important;margin-bottom:28px !important;padding-top:48px !important}
+  .section-title{font-size:24px !important}
+  .section-num{font-size:10px !important}
   
   /* Now Card */
-  .now-card{grid-template-columns:1fr;gap:28px;padding:28px 22px}
-  .now-label{font-size:10px;margin-bottom:12px}
-  .now-title{font-size:24px}
-  .now-subtitle{font-size:12px;margin-bottom:12px}
-  .now-desc{font-size:14px;line-height:1.7;margin-bottom:16px}
-  .now-proof{padding:14px 16px;margin-bottom:16px}
-  .now-proof-label{font-size:9px}
-  .now-proof ul li{font-size:12px;gap:6px}
-  .now-why-label{font-size:9px;margin-bottom:10px}
-  .now-why-text{font-size:14px;line-height:1.75}
-  .work-link{font-size:12px}
+  .now-card{display:block !important;padding:24px 20px !important}
+  .now-card > div:first-child{margin-bottom:28px !important}
+  .now-label{font-size:10px !important;margin-bottom:10px !important}
+  .now-title{font-size:22px !important}
+  .now-subtitle{font-size:11px !important;margin-bottom:10px !important}
+  .now-desc{font-size:14px !important;line-height:1.65 !important;margin-bottom:14px !important}
+  .now-proof{padding:14px !important;margin-bottom:14px !important}
+  .now-proof-label{font-size:9px !important}
+  .now-proof ul li{font-size:12px !important}
+  .now-why-label{font-size:9px !important;margin-bottom:8px !important}
+  .now-why-text{font-size:14px !important;line-height:1.7 !important}
+  .work-link{font-size:12px !important}
   
   /* Work Items */
-  .work-item{grid-template-columns:1fr;gap:8px;padding:34px 0}
-  .work-year{font-size:11px;padding-top:0;margin-bottom:4px;color:var(--accent)}
-  .work-title{font-size:20px;margin-bottom:6px}
-  .work-subtitle{font-size:12px;margin-bottom:12px}
-  .work-tag{font-size:9px;padding:3px 9px}
-  .work-desc{font-size:14px;margin-bottom:12px}
-  .work-decision{padding:12px 16px;margin:14px 0;border-radius:0 6px 6px 0}
-  .work-decision-label{font-size:9px;margin-bottom:6px}
-  .work-decision p{font-size:13px;line-height:1.65}
-  .work-metrics{gap:6px;margin-top:14px}
-  .work-metric{font-size:11px;padding:3px 10px}
+  .work-item{display:block !important;padding:28px 0 !important}
+  .work-year{font-size:11px !important;margin-bottom:8px !important;color:var(--accent) !important}
+  .work-title{font-size:19px !important;margin-bottom:4px !important;flex-wrap:wrap !important}
+  .work-subtitle{font-size:11px !important;margin-bottom:10px !important}
+  .work-tag{font-size:9px !important;padding:3px 8px !important}
+  .work-desc{font-size:14px !important;margin-bottom:10px !important;max-width:100% !important}
+  .work-decision{padding:12px 14px !important;margin:12px 0 !important}
+  .work-decision-label{font-size:9px !important;margin-bottom:5px !important}
+  .work-decision p{font-size:13px !important;line-height:1.6 !important}
+  .work-metrics{gap:6px !important;margin-top:12px !important}
+  .work-metric{font-size:11px !important;padding:4px 10px !important}
   
   /* Writing */
-  .writing-grid{grid-template-columns:1fr;gap:14px;padding-bottom:10px}
-  .writing-card{padding:20px}
-  .writing-tag{font-size:9px;margin-bottom:9px}
-  .writing-title{font-size:16px;margin-bottom:9px}
-  .writing-excerpt{font-size:13px;line-height:1.6}
-  .writing-arrow{font-size:11px;margin-top:10px}
-  .writing-note{font-size:10px;margin-top:10px}
+  .writing-grid{display:block !important}
+  .writing-card{padding:18px !important;margin-bottom:12px !important}
+  .writing-card:last-child{margin-bottom:0 !important}
+  .writing-tag{font-size:9px !important;margin-bottom:8px !important}
+  .writing-title{font-size:15px !important;margin-bottom:8px !important}
+  .writing-excerpt{font-size:13px !important;line-height:1.55 !important}
+  .writing-arrow{font-size:11px !important;margin-top:10px !important}
+  .writing-note{font-size:10px !important;margin-top:8px !important}
   
   /* Beliefs */
-  .beliefs-subhead{font-size:20px;margin-bottom:20px;margin-top:44px}
-  .beliefs-list{grid-template-columns:1fr;gap:12px}
-  .belief{padding:20px}
-  .belief-claim{font-size:13px;margin-bottom:7px}
-  .belief-why{font-size:12px;line-height:1.6}
+  .beliefs-subhead{font-size:19px !important;margin-bottom:18px !important;margin-top:40px !important}
+  .beliefs-list{display:block !important}
+  .belief{padding:18px !important;margin-bottom:10px !important}
+  .belief:last-child{margin-bottom:0 !important}
+  .belief-claim{font-size:13px !important;margin-bottom:6px !important}
+  .belief-why{font-size:12px !important;line-height:1.55 !important}
   
   /* Testimonial */
-  .testimonial{padding:28px 24px;margin-top:36px;border-radius:12px}
-  .testimonial::before{font-size:56px;top:16px;left:20px}
-  .testimonial-text{font-size:16px;line-height:1.7;margin-bottom:16px;padding-left:10px}
-  .testimonial-author{font-size:11px;padding-left:10px}
+  .testimonial{padding:24px 20px !important;margin-top:32px !important;border-radius:10px !important}
+  .testimonial::before{font-size:48px !important;top:12px !important;left:16px !important}
+  .testimonial-text{font-size:15px !important;line-height:1.65 !important;margin-bottom:14px !important;padding-left:8px !important}
+  .testimonial-author{font-size:11px !important;padding-left:8px !important}
   
   /* Contact */
-  .contact-block{grid-template-columns:1fr;gap:32px;padding:56px 0 72px}
-  .contact-heading{font-size:32px;margin-bottom:12px}
-  .contact-sub{font-size:14px;line-height:1.65;max-width:100%}
-  .contact-links{gap:10px}
-  .contact-link{padding:16px 18px}
-  .contact-link-label{font-size:14px}
-  .contact-link-meta{font-size:11px}
+  .contact-block{display:block !important;padding:48px 0 60px !important}
+  .contact-block > div:first-child{margin-bottom:28px !important}
+  .contact-heading{font-size:28px !important;margin-bottom:10px !important}
+  .contact-sub{font-size:14px !important;line-height:1.6 !important;max-width:100% !important}
+  .contact-links{gap:10px !important}
+  .contact-link{padding:14px 16px !important}
+  .contact-link-label{font-size:14px !important}
+  .contact-link-meta{font-size:10px !important}
   
   /* Footer */
-  footer{padding:24px 0;flex-direction:column;align-items:flex-start;gap:10px}
-  .footer-text{font-size:11px;line-height:1.5}
+  footer{padding:20px 0 !important;flex-direction:column !important;align-items:flex-start !important;gap:8px !important}
+  .footer-text{font-size:11px !important;line-height:1.5 !important}
   
   /* Back to top button */
-  .back-to-top{bottom:20px;right:20px;width:48px;height:48px;font-size:20px}
+  .back-to-top{bottom:16px !important;right:16px !important;width:44px !important;height:44px !important;font-size:18px !important}
+  
+  /* Ambient decoration - smaller on mobile */
+  .ambient{width:400px !important;height:400px !important;top:-150px !important;right:-150px !important}
 }
 </style>
 </head>
